@@ -1,5 +1,5 @@
 {
-    "name": "file-name",
+    "name": "interactive-form-validation-system",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -10,7 +10,8 @@
         "build": "webpack --config webpack.prod.js",
         "lint-format": "biome check . --fix",
         "deploy": "git checkout gh-pages || git checkout -b gh-pages && git merge main --no-edit && npm run build && git add -f dist && git commit -m 'Initial gh-pages deploy' && git subtree push --prefix dist origin gh-pages && git checkout main && rm -rf dist",
-        "reset": "git push origin --delete gh-pages && git branch -D gh-pages"},
+        "reset": "git push origin --delete gh-pages && git branch -D gh-pages"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",

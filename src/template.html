@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form Validation Project</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-<h1>⚙️ Webpack + Biome Template</h1>
-<h2>A modern, minimal Webpack boilerplate for front-end development — 
-    preconfigured with Biome for formatting and linting, and ready for GitHub Pages deployment.</h2>
-</body>
-
+    <body>
+        <div class="form-div">
+            <form action="/" method="get" novalidate>
+                <fieldset>
+                    <div class="form-header">
+                        <legend class="form-heading">Personal Details</legend>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="email">Email:</label>
+                        <input class="form-input" type="email" id="email" name="email" required />
+                        <p class="error-msg-email"></p>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="country">Country:</label>
+                        <input class="form-input" type="text" id="country" name="country" required />
+                        <p class="error-msg-country"></p>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="postal">Postal Code:</label>
+                        <input class="form-input" type="text" id="postal" name="postal" required />
+                        <p class="error-msg-postal"></p>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="password">Password:</label>
+                        <input class="form-input" type="password" id="password" name="password" required />
+                        <p class="error-msg-password"></p>
+                    </div>
+                    <div class="form-control">
+                        <label class="form-label" for="confirm">Confirm Password:</label>
+                        <input class="form-input" type="password" id="confirm" name="confirm" required />
+                        <p class="error-msg-confirm"></p>
+                    </div>
+                    <div class="form-actions">
+                        <input class="submit-buttom" type="submit" value="Submit" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
 </html>
