@@ -7,42 +7,42 @@
     </head>
 
     <body>
-        <div class="form-div">
-            <form action="/" method="get" novalidate>
-                <fieldset>
+        <form action="/" method="get" novalidate>
+            <fieldset>
+                <div class="form-div">
                     <div class="form-header">
                         <legend class="form-heading">Personal Details</legend>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="email">Email:</label>
                         <input class="form-input" type="email" id="email" name="email" required />
-                        <p class="error-msg-email"></p>
+                        <p id="error-email" class="error-msg">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="country">Country:</label>
                         <input class="form-input" type="text" id="country" name="country" required />
-                        <p class="error-msg-country"></p>
+                        <p id="error-country" class="error-msg">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="postal">Postal Code:</label>
                         <input class="form-input" type="text" id="postal" name="postal" required />
-                        <p class="error-msg-postal"></p>
+                        <p id="error-postal" class="error-msg">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="password">Password:</label>
                         <input class="form-input" type="password" id="password" name="password" required />
-                        <p class="error-msg-password"></p>
+                        <p id="error-password" class="error-msg">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="confirm">Confirm Password:</label>
                         <input class="form-input" type="password" id="confirm" name="confirm" required />
-                        <p class="error-msg-confirm"></p>
+                        <p id="error-confirm" class="error-msg">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     </div>
                     <div class="form-actions">
                         <input class="submit-buttom btn" type="submit" value="Submit" />
                     </div>
-                </fieldset>
-            </form>
-        </div>
+                </div>
+            </fieldset>
+        </form>
     </body>
 </html>

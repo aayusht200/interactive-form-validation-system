@@ -1,0 +1,94 @@
+:root {
+    --font-weight-heading: 600;
+    --font-size-heading: 2rem;
+    --font-size-input: 1rem;
+    --font-size-label: 1.2rem;
+    --gap-default: 1rem;
+    --padding-default: 1rem;
+    --height-form-input: clamp(1.5rem, 2rem, 2.5rem);
+    --width-form-input: clamp(240px, 280px, 320px);
+    --line-height-form-input: 1.2rem;
+    --border-radius-default: 1rem;
+    --padding-left-form-input: 0.65rem;
+    --border-valid-form-input: 1px solid hsl(120, 40%, 50%);
+    --border-invalid-form-input: 1px solid hsl(0, 40%, 50%);
+    --outline-focus-input: 1px solid hsl(0, 0%, 100%);
+    --width-form-label: clamp(80px, 120px, 150px);
+}
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color-scheme: dark;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-div {
+    height: auto;
+    display: grid;
+    gap: var(--gap-default);
+    padding: var(--padding-default);
+}
+
+.btn {
+    width: fit-content;
+    padding: 0.6rem;
+    border-radius: var(--border-radius-default);
+    border: 0;
+
+    cursor: pointer;
+    font-size: var(--font-size-label);
+}
+.btn:hover {
+    scale: 1.05;
+}
+
+.form-label {
+    font-size: var(--font-size-label);
+    width: var(--width-form-label);
+}
+.form-heading {
+    font-weight: var(--font-weight-heading);
+    font-size: var(--font-size-heading);
+}
+
+.form-control {
+    display: flex;
+    gap: var(--gap-default);
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form-input {
+    font-size: var(--font-size-input);
+    width: var(--width-form-input);
+    height: var(--height-form-input);
+    line-height: var(--line-height-form-input);
+    border-radius: var(--border-radius-default);
+    padding-left: var(--padding-left-form-input);
+    border: 1px solid hsl(0, 0%, 40%);
+}
+.form-input:focus {
+    outline: var(--outline-focus-input);
+}
+
+.input-valid {
+    border: var(--border-valid-form-input);
+}
+.input-invalid {
+    border: var(--border-invalid-form-input);
+}
+
+.error-msg {
+    width: 100%;
+    display: none;
+}
