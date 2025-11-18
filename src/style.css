@@ -89,6 +89,16 @@ body {
 }
 
 .error-msg {
+    opacity: 0;
+    visibility: hidden;
+    height: 1rem;
+    transition: opacity 0.2s ease;
     width: 100%;
-    display: none;
+}
+.error-show {
+    opacity: 1;
+    visibility: visible;
+}
+fieldset {
+    border: none;
 }
