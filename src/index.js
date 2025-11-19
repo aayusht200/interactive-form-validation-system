@@ -82,10 +82,12 @@ function validatePassword(input) {
 
 function validateConfirm(input) {
     const password = fields.password.input;
-    if (input.value === password.value) {
-        validInput(input);
-    } else {
-        invalidInput(input);
+    if (!fields.confirm.input.disabled) {
+        if (input.value === password.value) {
+            validInput(input);
+        } else {
+            invalidInput(input);
+        }
     }
 }
 
