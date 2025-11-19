@@ -7,39 +7,67 @@
     </head>
 
     <body>
-        <form action="/" method="get" novalidate>
+        <form action="/" method="get" novalidate id="form">
             <fieldset>
-                <div class="form-div">
-                    <div class="form-header">
-                        <legend class="form-heading">Personal Details</legend>
-                    </div>
+                <div class="form-header">
+                    <legend class="form-heading">Personal Details</legend>
+                </div>
+                <div class="form-div" data-form-div>
                     <div class="form-control">
                         <label class="form-label" for="email">Email:</label>
-                        <input class="form-input" type="email" id="email" name="email" required />
+                        <input class="form-input" type="email" id="email" name="email" autocomplete="email" required />
                         <p id="error-email" class="error-msg"></p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="country">Country:</label>
-                        <input class="form-input" type="text" id="country" name="country" required />
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="country"
+                            name="country"
+                            autocomplete="country-name"
+                            required
+                        />
                         <p id="error-country" class="error-msg"></p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="postal">Postal Code:</label>
-                        <input class="form-input" type="text" id="postal" name="postal" required />
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="postal"
+                            name="postal"
+                            autocomplete="postal-code"
+                            required
+                        />
                         <p id="error-postal" class="error-msg"></p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="password">Password:</label>
-                        <input class="form-input" type="password" id="password" name="password" required />
+                        <input
+                            class="form-input"
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="new-password"
+                            required
+                        />
                         <p id="error-password" class="error-msg"></p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="confirm">Confirm Password:</label>
-                        <input class="form-input" type="password" id="confirm" name="confirm" required />
+                        <input
+                            class="form-input"
+                            type="password"
+                            id="confirm"
+                            name="confirm"
+                            autocomplete="new-password"
+                            required
+                        />
                         <p id="error-confirm" class="error-msg"></p>
                     </div>
                     <div class="form-actions">
-                        <input class="submit-buttom btn" type="submit" value="Submit" />
+                        <input id="submit" class="submit-buttom btn" type="submit" value="Submit" />
                     </div>
                 </div>
             </fieldset>

@@ -76,10 +76,11 @@ body {
     border-radius: var(--border-radius-default);
     padding-left: var(--padding-left-form-input);
     border: 1px solid hsl(0, 0%, 40%);
+    outline: none;
 }
-.form-input:focus {
+/* .form-input:focus {
     outline: var(--outline-focus-input);
-}
+} */
 
 .input-valid {
     border: var(--border-valid-form-input);
@@ -101,4 +102,8 @@ body {
 }
 fieldset {
     border: none;
+}
+.form-actions {
+    display: grid;
+    justify-content: center;
 }
