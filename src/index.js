@@ -110,13 +110,6 @@ function invalidInput(input) {
     fields[input.id].error.classList.remove('error-hide');
 }
 
-function resetState(input) {
-    input.classList.remove('input-valid');
-    input.classList.remove('input-invalid');
-    fields[input.id].error.classList.remove('error-show');
-    fields[input.id].error.classList.remove('error-hide');
-}
-
 const form = document.getElementById('form');
 
 form.addEventListener('submit', (e) => {

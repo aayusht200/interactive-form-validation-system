@@ -1,117 +1,117 @@
 :root {
-    --font-weight-heading: 600;
-    --font-size-heading: 2rem;
-    --font-size-input: 1rem;
-    --font-size-label: 1.2rem;
-    --gap-default: 1rem;
-    --padding-default: 1rem;
-    --height-form-input: clamp(1.5rem, 2rem, 2.5rem);
-    --width-form-input: clamp(240px, 280px, 320px);
-    --line-height-form-input: 1.2rem;
-    --border-radius-default: 1rem;
-    --padding-left-form-input: 0.65rem;
-    --border-valid-form-input: 1px solid hsl(120, 40%, 50%);
-    --border-invalid-form-input: 1px solid hsl(0, 40%, 50%);
-    --outline-focus-input: 1px solid hsl(0, 0%, 100%);
-    --width-form-label: clamp(80px, 120px, 150px);
+	--font-weight-heading: 600;
+	--font-size-heading: 2rem;
+	--font-size-input: 1rem;
+	--font-size-label: 1.2rem;
+	--gap-default: 1rem;
+	--padding-default: 1rem;
+	--height-form-input: clamp(1.5rem, 2rem, 2.5rem);
+	--width-form-input: clamp(240px, 280px, 320px);
+	--line-height-form-input: 1.2rem;
+	--border-radius-default: 1rem;
+	--padding-left-form-input: 0.65rem;
+	--border-valid-form-input: 1px solid hsl(120, 40%, 50%);
+	--border-invalid-form-input: 1px solid hsl(0, 40%, 50%);
+	--outline-focus-input: 1px solid hsl(0, 0%, 100%);
+	--width-form-label: clamp(80px, 120px, 150px);
 }
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    color-scheme: dark;
-    font-family: 'Courier New', Courier, monospace;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	color-scheme: dark;
+	font-family: "Courier New", Courier, monospace;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .form-div {
-    height: 80vh;
-    display: grid;
-    gap: var(--gap-default);
-    padding: var(--padding-default);
+	height: 80vh;
+	display: grid;
+	gap: var(--gap-default);
+	padding: var(--padding-default);
 }
 
 .btn {
-    width: fit-content;
-    padding: 0.6rem;
-    border-radius: var(--border-radius-default);
-    border: 0;
-    cursor: pointer;
-    font-size: var(--font-size-label);
+	width: fit-content;
+	padding: 0.6rem;
+	border-radius: var(--border-radius-default);
+	border: 0;
+	cursor: pointer;
+	font-size: var(--font-size-label);
 }
 .btn:hover {
-    scale: 1.05;
+	scale: 1.05;
 }
 
 .form-label {
-    font-size: var(--font-size-label);
-    width: var(--width-form-label);
+	font-size: var(--font-size-label);
+	width: var(--width-form-label);
 }
 .form-heading {
-    font-weight: var(--font-weight-heading);
-    font-size: var(--font-size-heading);
+	font-weight: var(--font-weight-heading);
+	font-size: var(--font-size-heading);
 }
 
 .form-control {
-    display: flex;
-    gap: var(--gap-default);
-    align-items: center;
-    flex-wrap: wrap;
+	display: flex;
+	gap: var(--gap-default);
+	align-items: center;
+	flex-wrap: wrap;
 }
 .form-input {
-    font-size: var(--font-size-input);
-    width: var(--width-form-input);
-    height: var(--height-form-input);
-    line-height: var(--line-height-form-input);
-    border-radius: var(--border-radius-default);
-    padding-left: var(--padding-left-form-input);
-    border: 1px solid hsl(0, 0%, 40%);
-    outline: none;
+	font-size: var(--font-size-input);
+	width: var(--width-form-input);
+	height: var(--height-form-input);
+	line-height: var(--line-height-form-input);
+	border-radius: var(--border-radius-default);
+	padding-left: var(--padding-left-form-input);
+	border: 1px solid hsl(0, 0%, 40%);
+	outline: none;
 }
 
 .input-valid {
-    border: var(--border-valid-form-input);
+	border: var(--border-valid-form-input);
 }
 .input-invalid {
-    border: var(--border-invalid-form-input);
+	border: var(--border-invalid-form-input);
 }
 
 fieldset {
-    border: none;
+	border: none;
 }
 
 .error-msg {
-    opacity: 0;
-    visibility: hidden;
-    display: block;
-    align-items: center;
-    transition: opacity 0.2s ease;
-    border: var(--border-invalid-form-input);
-    border-radius: var(--border-radius-default);
-    height: fit-content;
+	opacity: 0;
+	visibility: hidden;
+	display: block;
+	align-items: center;
+	transition: opacity 0.2s ease;
+	border: var(--border-invalid-form-input);
+	border-radius: var(--border-radius-default);
+	height: fit-content;
 }
 .error-msg ul {
-    list-style: circle;
-    padding-left: var(--padding-left-form-input);
+	list-style: circle;
+	padding-left: var(--padding-left-form-input);
 }
 .error-hide {
-    opacity: 0;
-    visibility: hidden;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .error-show {
-    flex-wrap: wrap;
-    opacity: 1;
-    visibility: visible;
-    padding: var(--padding-default);
-    display: block;
+	flex-wrap: wrap;
+	opacity: 1;
+	visibility: visible;
+	padding: var(--padding-default);
+	display: block;
 }
