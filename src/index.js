@@ -30,26 +30,26 @@ Object.keys(fields).forEach((key) => {
     });
 });
 function formValidation(input) {
+    if (input.value.length <= 0) {
+        invalidInput(input);
+        return;
+    }
+
     switch (input.id) {
         case 'email':
-            if (input.value.length > 0) validateEmail(input);
-            else resetState(input);
+            validateEmail(input);
             break;
         case 'country':
-            if (input.value.length > 0) validateCountry(input);
-            else resetState(input);
+            validateCountry(input);
             break;
         case 'postal':
-            if (input.value.length > 0) validatePostal(input);
-            else resetState(input);
+            validatePostal(input);
             break;
         case 'password':
-            if (input.value.length > 0) validatePassword(input);
-            else resetState(input);
+            validatePassword(input);
             break;
         case 'confirm':
-            if (input.value.length > 0) validateConfirm(input);
-            else resetState(input);
+            validateConfirm(input);
             break;
     }
 }
@@ -117,7 +117,18 @@ function resetState(input) {
     fields[input.id].error.classList.remove('error-hide');
 }
 
-Object.keys(fields).forEach((key) => {
-    const { input } = fields[key];
-    
+const form = document.getElementById('form');
+
+form.addEventListener('submit', (e) => {
+    let isValid = true;
+    Object.keys(fields).forEach((key) => {
+        const { input } = fields[key];
+        if (input.classList.contains('input-invalid') || input.value.length <= 0) {
+            formValidation(input);
+            isValid = false;
+        }
+    });
+    if (!isValid) {
+        e.preventDefault();
+    }
 });
