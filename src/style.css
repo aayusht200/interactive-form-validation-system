@@ -89,29 +89,29 @@ fieldset {
 	border: none;
 }
 
-.error-msg {
-	opacity: 0;
-	visibility: hidden;
-	display: block;
-	align-items: center;
-	transition: opacity 0.2s ease;
-	border: var(--border-invalid-form-input);
-	border-radius: var(--border-radius-default);
-	height: fit-content;
-}
 .error-msg ul {
 	list-style: circle;
 	padding-left: var(--padding-left-form-input);
 }
+
+/* Base error box */
+.error-msg {
+	opacity: 0;
+	visibility: hidden;
+	border: var(--border-invalid-form-input);
+	border-radius: var(--border-radius-default);
+	padding: var(--padding-default);
+	transition: opacity 0.2s ease;
+}
+
+/* Hidden state */
 .error-hide {
 	opacity: 0;
 	visibility: hidden;
 }
 
+/* Visible state */
 .error-show {
-	flex-wrap: wrap;
 	opacity: 1;
 	visibility: visible;
-	padding: var(--padding-default);
-	display: block;
 }
