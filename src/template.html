@@ -16,7 +16,7 @@
                     <div class="form-control">
                         <label class="form-label" for="email">Email:</label>
                         <input class="form-input" type="email" id="email" name="email" autocomplete="email" required />
-                        <p id="error-email" class="error-msg"></p>
+                        <p class="error-msg" id="error-email">Please enter a valid email address.</p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="country">Country:</label>
@@ -28,7 +28,9 @@
                             autocomplete="country-name"
                             required
                         />
-                        <p id="error-country" class="error-msg"></p>
+                        <p class="error-msg" id="error-country">
+                            Country name canot contain numbers or special keywords.
+                        </p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="postal">Postal Code:</label>
@@ -40,7 +42,9 @@
                             autocomplete="postal-code"
                             required
                         />
-                        <p id="error-postal" class="error-msg"></p>
+                        <p class="error-msg" id="error-postal">
+                            Postal code has the length of 6 & canot start with a 0.
+                        </p>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="password">Password:</label>
@@ -52,7 +56,15 @@
                             autocomplete="new-password"
                             required
                         />
-                        <p id="error-password" class="error-msg"></p>
+                        <div class="error-msg" id="error-password">
+                            <ul>
+                                <li>Password Must contain atleast one uppercase letter.</li>
+                                <li>Password Must contain atleast one smallcase letter.</li>
+                                <li>Password Must contain atleast one special case letter.</li>
+                                <li>Password Must contain atleast one number.</li>
+                                <li>Password canot be smaller than 8 characters.</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="form-control">
                         <label class="form-label" for="confirm">Confirm Password:</label>
@@ -63,8 +75,9 @@
                             name="confirm"
                             autocomplete="new-password"
                             required
+                            disabled="true"
                         />
-                        <p id="error-confirm" class="error-msg"></p>
+                        <p class="error-msg" id="error-confirm">Password missmatch.</p>
                     </div>
                     <div class="form-actions">
                         <input id="submit" class="submit-buttom btn" type="submit" value="Submit" />

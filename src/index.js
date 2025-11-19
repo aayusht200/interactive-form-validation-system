@@ -32,19 +32,24 @@ Object.keys(fields).forEach((key) => {
 function formValidation(input) {
     switch (input.id) {
         case 'email':
-            validateEmail(input);
+            if (input.value.length > 0) validateEmail(input);
+            else resetState(input);
             break;
         case 'country':
-            validateCountry(input);
+            if (input.value.length > 0) validateCountry(input);
+            else resetState(input);
             break;
         case 'postal':
-            validatePostal(input);
+            if (input.value.length > 0) validatePostal(input);
+            else resetState(input);
             break;
         case 'password':
-            validatePassword(input);
+            if (input.value.length > 0) validatePassword(input);
+            else resetState(input);
             break;
         case 'confirm':
-            validateConfirm(input);
+            if (input.value.length > 0) validateConfirm(input);
+            else resetState(input);
             break;
     }
 }
@@ -55,7 +60,7 @@ function validateEmail(input) {
 }
 
 function validateCountry(input) {
-    const validateString = /^[A-Za-z]+$/;
+    const validateString = /^[A-Za-z\s.'-]+$/;
     validateState(validateString, input);
 }
 
@@ -66,17 +71,19 @@ function validatePostal(input) {
 
 function validatePassword(input) {
     const validateString = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-    validateState(validateString, input);
+    if (validateString.test(input.value)) {
+        validInput(input);
+        fields.confirm.input.disabled = false;
+    } else {
+        invalidInput(input);
+        fields.confirm.input.disabled = true;
+    }
 }
 
 function validateConfirm(input) {
-    const password = fields['password'].input;
-    if (password.classList.contains('input-valid')) {
-        if (input.value === password.value) {
-            validInput(input);
-        } else {
-            invalidInput(input);
-        }
+    const password = fields.password.input;
+    if (input.value === password.value) {
+        validInput(input);
     } else {
         invalidInput(input);
     }
@@ -93,8 +100,24 @@ function validateState(validateString, input) {
 function validInput(input) {
     input.classList.remove('input-invalid');
     input.classList.add('input-valid');
+    fields[input.id].error.classList.add('error-hide');
+    fields[input.id].error.classList.remove('error-show');
 }
 function invalidInput(input) {
     input.classList.remove('input-valid');
     input.classList.add('input-invalid');
+    fields[input.id].error.classList.add('error-show');
+    fields[input.id].error.classList.remove('error-hide');
 }
+
+function resetState(input) {
+    input.classList.remove('input-valid');
+    input.classList.remove('input-invalid');
+    fields[input.id].error.classList.remove('error-show');
+    fields[input.id].error.classList.remove('error-hide');
+}
+
+Object.keys(fields).forEach((key) => {
+    const { input } = fields[key];
+    
+});
